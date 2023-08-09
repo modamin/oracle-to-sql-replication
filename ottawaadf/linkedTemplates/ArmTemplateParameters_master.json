@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ottawaadf"
+		},
+		"DstDB_connectionString": {
+			"value": ""
+		},
+		"SRCSQLVM_SRCDB_connectionString": {
+			"value": "Integrated Security=True;Data Source=srcsqlvm;Initial Catalog=srcdb"
+		},
+		"SRCSQLVM_SRCDB_password": {
+			"value": ""
+		},
+		"StagingDB_connectionString": {
+			"value": ""
+		},
+		"SRCSQLVM_SRCDB_properties_typeProperties_userName": {
+			"value": "Sqladminuser"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

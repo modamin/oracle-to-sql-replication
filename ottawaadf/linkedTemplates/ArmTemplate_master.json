@@ -1,0 +1,78 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ottawaadf"
+		},
+		"DstDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DstDB'"
+		},
+		"SRCSQLVM_SRCDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SRCSQLVM_SRCDB'",
+			"defaultValue": "Integrated Security=True;Data Source=srcsqlvm;Initial Catalog=srcdb"
+		},
+		"SRCSQLVM_SRCDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SRCSQLVM_SRCDB'"
+		},
+		"StagingDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'StagingDB'"
+		},
+		"SRCSQLVM_SRCDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Sqladminuser"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ottawaadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DstDB_connectionString": {
+						"value": "[parameters('DstDB_connectionString')]"
+					},
+					"SRCSQLVM_SRCDB_connectionString": {
+						"value": "[parameters('SRCSQLVM_SRCDB_connectionString')]"
+					},
+					"SRCSQLVM_SRCDB_password": {
+						"value": "[parameters('SRCSQLVM_SRCDB_password')]"
+					},
+					"StagingDB_connectionString": {
+						"value": "[parameters('StagingDB_connectionString')]"
+					},
+					"SRCSQLVM_SRCDB_properties_typeProperties_userName": {
+						"value": "[parameters('SRCSQLVM_SRCDB_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
