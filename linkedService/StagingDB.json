@@ -1,0 +1,16 @@
+{
+	"name": "StagingDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlMI",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=dstsqlmi.21ecf3929780.database.windows.net;initial catalog=stagingdb;user id=Sqladminuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4MmExZWUwMC04MmQ3LTRkYzMtYWU3MC1lOWM0ZDBjOTAxYTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

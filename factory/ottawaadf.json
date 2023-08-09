@@ -1,0 +1,9 @@
+{
+	"name": "ottawaadf",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a0a5306d-2b87-4a28-ba12-d5e428a5adea",
+		"tenantId": "089a8171-e48b-4aab-9dfb-38d7ac5f889c"
+	}
+}

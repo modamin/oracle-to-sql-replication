@@ -1,0 +1,36 @@
+{
+	"name": "StagingDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "StagingDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "nchar"
+			},
+			{
+				"name": "LastModified",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone",
+				"type": "nchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Voters"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

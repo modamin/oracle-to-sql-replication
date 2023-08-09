@@ -1,0 +1,17 @@
+{
+	"name": "SRCSQLVM_SRCDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=srcsqlvm;initial catalog=srcdb",
+			"userName": "Sqladminuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2YTFlN2VjZC1lNTllLTRlZTctOTUyMy01MDZmYjRlMDZkNGIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
