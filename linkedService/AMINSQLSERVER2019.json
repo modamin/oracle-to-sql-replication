@@ -1,0 +1,21 @@
+{
+	"name": "AMINSQLSERVER2019",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"AMINSQL_DBNAME": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=AMIN\\SQLSERVER2019;initial catalog=@{linkedService().AMINSQL_DBNAME};user id=aminadmin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyNDJkNTUwMy00MjZkLTQyZGUtOGZkMC0wMGZiOTZjN2I2YzYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-AMINPC",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
